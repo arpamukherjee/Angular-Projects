@@ -1,0 +1,17 @@
+<!-- <div><h1>{{pageTitle}}</h1>
+  <pm-products></pm-products>
+  </div> -->
+<div class="container-fluid">
+  <nav class="navbar navbar-expand navbar-light bg-light">
+    <a class="navbar-brand">{{pageTitle}}</a>
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink] = "['/welcome']">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" [routerLink] = "['/products']">Product List</a>
+      </li>
+    </ul>
+  </nav>
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,70 @@
+<div class="card w-75 page-hdr">
+    <div class="card-header">
+        {{pageTitle}}
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-4">
+                        Name:
+                    </div>
+                    <div class="col-md-8">
+                        {{selectedProduct.productName}}
+                    </div>
+                </div>
+                <div class="row">
+                        <div class="col-md-4">
+                            Code:
+                        </div>
+                        <div class="col-md-8">
+                            {{selectedProduct.productCode}}
+                        </div>
+                </div>
+                <div class="row">
+                            <div class="col-md-4">
+                                Description:
+                            </div>
+                            <div class="col-md-8">
+                                {{selectedProduct.description}}
+                            </div>
+                </div>
+                <div class="row">
+                        <div class="col-md-4">
+                            Availability:
+                        </div>
+                        <div class="col-md-8">
+                            {{selectedProduct.releaseDate}}
+                        </div>
+                </div>
+                <div class="row">
+                        <div class="col-md-4">
+                            Price:
+                        </div>
+                        <div class="col-md-8">
+                            {{selectedProduct.price | currency : 'GBP'}}
+                        </div>
+                </div>
+                <div class="row">
+                        <div class="col-md-4">
+                            Star Rating:
+                        </div>
+                        <div class="col-md-8">
+                            <pm-star [rating] = 'selectedProduct.starRating'></pm-star>
+                        </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                    <img class='center-block img-responsive' [src]= 'selectedProduct.imageUrl'
+                    [title] = 'selectedProduct.productName'
+                    [style.width.px] = 150
+                    [style.margin.px] = 2>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <button type="button" class="btn btn-outline-secondary" (click) = 'onBackButtonClick()'>
+            <a [routerLink] = "['/products']">Back</a>
+        </button>
+    </div>
+</div>
